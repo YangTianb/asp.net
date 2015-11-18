@@ -24,5 +24,7 @@ namespace ExtensionMethod
             }
             Console.ReadLine();
         }
+
+  
     }
 }
