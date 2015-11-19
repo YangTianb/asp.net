@@ -86,6 +86,16 @@
   <ItemGroup>
     <Folder Include="config\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="dll\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="dll\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll" />
+    <Content Include="dll\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="dll\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="dll\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="dll\Microsoft.Practices.Unity.dll" />
+    <Content Include="dll\Microsoft.Practices.Unity.Interception.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
