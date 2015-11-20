@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.ServiceLocation;
 using System;
@@ -13,17 +14,9 @@ namespace Bayker.LogLibrary
     {
         static void Main(string[] args)
         {
-            LogEntry logEntry = new LogEntry();
-
-            logEntry.EventId = 1;
-            logEntry.Priority = 1;
-            logEntry.Title = "标题党";
-            logEntry.Message = "http://www.cnblogs.com/huangcong/";
-            logEntry.Categories.Add("C#学习");
-            logEntry.Categories.Add("Microsoft Enterprise Library学习");
-
-            Logger.Writer.Write(logEntry, "General");
-            Console.WriteLine("日志写入完成!");
+            LogWriter logWriter = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
+            logWriter.Write("Test");
+            Console.ReadLine();
         }
     }
 }
