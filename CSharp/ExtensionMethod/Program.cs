@@ -11,6 +11,7 @@ namespace ExtensionMethod
         static void Main(string[] args)
         {
             DemoLinq();
+            StringCount();
         }
 
         private static void DemoLinq()
@@ -25,6 +26,19 @@ namespace ExtensionMethod
             Console.ReadLine();
         }
 
-  
+        private static void StringCount()
+        {
+            string s = "This is jikexuyuan c# tutorial!";
+            int i = s.WordCount();
+            Console.WriteLine(s + " have {0} word", i);
+            Console.ReadLine();
+        }
+
+    }
+
+    public static class StringExtension{
+        public static int WordCount(this string str) {
+            return str.Split(new char[] { ' ', '.' }, StringSplitOptions.RemoveEmptyEntries).Length;
+        } 
     }
 }

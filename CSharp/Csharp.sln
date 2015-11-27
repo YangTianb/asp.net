@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "企业库", "企业库", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingLibrary", "LoggingLibrary\LoggingLibrary.csproj", "{2DDC199A-4C70-4D64-BC14-FA7812DA4DDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopLibrary", "AopLibrary\AopLibrary.csproj", "{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewAop", "NewAop\NewAop.csproj", "{E7157F22-F714-4029-B994-055563439CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{2DDC199A-4C70-4D64-BC14-FA7812DA4DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DDC199A-4C70-4D64-BC14-FA7812DA4DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DDC199A-4C70-4D64-BC14-FA7812DA4DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7157F22-F714-4029-B994-055563439CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7157F22-F714-4029-B994-055563439CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7157F22-F714-4029-B994-055563439CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7157F22-F714-4029-B994-055563439CE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,9 +44,11 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{99C62E49-02CB-419A-8835-01944AB5C98C} = {6044739F-8888-4743-A182-C82BEB49BB28}
 		{2DDC199A-4C70-4D64-BC14-FA7812DA4DDD} = {78F88BF3-CB11-4E66-BDB0-096E5D8D8CF4}
+		{CA1CD8F6-1DF0-447C-8D61-8BAAAF6832A9} = {78F88BF3-CB11-4E66-BDB0-096E5D8D8CF4}
+		{E7157F22-F714-4029-B994-055563439CE0} = {78F88BF3-CB11-4E66-BDB0-096E5D8D8CF4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35;packages\EnterpriseLibrary.Security.5.0.505.0\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.PolicyInjection.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
