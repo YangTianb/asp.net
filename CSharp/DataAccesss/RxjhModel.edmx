@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RxjhModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Rxjh.dbo.Commod”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Commod">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Line" />
+            <PropertyRef Name="Axes" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="MerName" />
+            <PropertyRef Name="DateTimes" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ValueAdd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Line" Type="int" Nullable="false" />
+          <Property Name="Axes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="bigint" Nullable="false" />
+          <Property Name="MerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateTimes" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Rxjh.dbo.CommodConfig”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="CommodConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Bytes" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Bytes" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Rxjh.dbo.SystemConfig”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SystemConfig">
+          <Key>
+            <PropertyRef Name="IP" />
+            <PropertyRef Name="Port" />
+          </Key>
+          <Property Name="IP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Port" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="RxjhModelStoreContainer">
+          <EntitySet Name="Commod" EntityType="Self.Commod" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Commod].[ID] AS [ID], 
+[Commod].[Name] AS [Name], 
+[Commod].[ValueAdd] AS [ValueAdd], 
+[Commod].[Line] AS [Line], 
+[Commod].[Axes] AS [Axes], 
+[Commod].[Price] AS [Price], 
+[Commod].[MerName] AS [MerName], 
+[Commod].[DateTimes] AS [DateTimes]
+FROM [dbo].[Commod] AS [Commod]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CommodConfig" EntityType="Self.CommodConfig" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[CommodConfig].[ID] AS [ID], 
+[CommodConfig].[Name] AS [Name], 
+[CommodConfig].[Bytes] AS [Bytes]
+FROM [dbo].[CommodConfig] AS [CommodConfig]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[SystemConfig].[IP] AS [IP], 
+[SystemConfig].[Port] AS [Port]
+FROM [dbo].[SystemConfig] AS [SystemConfig]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RxjhModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Commod">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Line" />
+            <PropertyRef Name="Axes" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="MerName" />
+            <PropertyRef Name="DateTimes" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValueAdd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Line" Type="Int32" Nullable="false" />
+          <Property Name="Axes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int64" Nullable="false" />
+          <Property Name="MerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTimes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="RxjhEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Commod" EntityType="Self.Commod" />
+          <EntitySet Name="CommodConfig" EntityType="RxjhModel.CommodConfig" />
+          <EntitySet Name="SystemConfig" EntityType="RxjhModel.SystemConfig" />
+        </EntityContainer>
+        <EntityType Name="CommodConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Bytes" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Bytes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SystemConfig">
+          <Key>
+            <PropertyRef Name="IP" />
+            <PropertyRef Name="Port" />
+          </Key>
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Port" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RxjhModelStoreContainer" CdmEntityContainer="RxjhEntities">
+          <EntitySetMapping Name="Commod">
+            <EntityTypeMapping TypeName="RxjhModel.Commod">
+              <MappingFragment StoreEntitySet="Commod">
+                <ScalarProperty Name="DateTimes" ColumnName="DateTimes" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ValueAdd" ColumnName="ValueAdd" />
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="Axes" ColumnName="Axes" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="MerName" ColumnName="MerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommodConfig">
+            <EntityTypeMapping TypeName="RxjhModel.CommodConfig">
+              <MappingFragment StoreEntitySet="CommodConfig">
+                <ScalarProperty Name="Bytes" ColumnName="Bytes" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemConfig">
+            <EntityTypeMapping TypeName="RxjhModel.SystemConfig">
+              <MappingFragment StoreEntitySet="SystemConfig">
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

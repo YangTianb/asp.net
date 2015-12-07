@@ -12,6 +12,7 @@ namespace BaseLibrary
         {
             //StringRand(6);
 
+
             HttpHelper h = new HttpHelper();
             var s = h.HttpGet("http://192.168.0.113:18081/zhongduan/zyydqk", "");
             Console.WriteLine(s);
