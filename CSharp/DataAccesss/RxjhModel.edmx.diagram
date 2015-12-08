@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2057be4a40974dcf9d714a8a3605aedc" Name="Diagram1">
-        <EntityTypeShape EntityType="RxjhModel.Commod" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RxjhModel.CommodConfig" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="RxjhModel.SystemConfig" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="RxjhModel.CommodConfig" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RxjhModel.Commod" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

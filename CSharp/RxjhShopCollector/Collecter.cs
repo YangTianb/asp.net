@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccesss;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -10,10 +11,10 @@ namespace RxjhShopCollector
     class Collecter
     {
 
-        public void GetData()
+        public void GetData(string hexData)
         {
-            DataAccesss.SystemConfigServer data = new  DataAccesss.SystemConfigServer();
-            var model =  data.Get();
+            DataAccesss.SystemConfigServer dataServer = new  DataAccesss.SystemConfigServer();
+            var model = dataServer.Get();
             //远程主机 
             string hostName = model.IP;
             //端口 
@@ -30,10 +31,8 @@ namespace RxjhShopCollector
                 Console.WriteLine("连接错误");
             }
             //发送给远程主机的请求内容串 
-            //玄武战衣
-            //string sendStr = "595f1000bfdbddba2cdff1c1ebdab2ddcd2cb0da";
-            //混元神甲
-            string sendStr = "595f1000bfdbddba2cb4e3dba5c6feb3d82cb0da";
+          
+            string sendStr = hexData;
             //创建bytes字节数组以转换发送串 
             byte[] bytesSendStr = new byte[1024];
             //将发送内容字符串转换成字节byte数组 
@@ -57,6 +56,7 @@ namespace RxjhShopCollector
             {
                 while ((length = socket.Receive(buffer)) > 0)
                 {
+                    //6为前6个字节无用的字节
                     for (int j = 6; j < length; j++)
                     {
                         data.Add(buffer[j]);
@@ -72,7 +72,37 @@ namespace RxjhShopCollector
             {
                 result = encode.GetString(data.ToArray(), 0, data.Count);
             }
+
+            var commods = result.Split('|');
+            List<Commod> listCommod = new List<Commod>();
             
+            foreach (var tempcommod in commods) {
+                
+                var _tempCommod = new Commod();
+                if (tempcommod.IndexOf('?') > 0)
+                    continue;
+                var arrayAtt = tempcommod.Split('#');
+                if (arrayAtt.Length ==1||arrayAtt.Length<=6)
+                    continue;
+                _tempCommod.MerName = arrayAtt[0].ToString();
+                _tempCommod.Axes = arrayAtt[1].ToString();
+                _tempCommod.Line = arrayAtt[3].ToString();
+                _tempCommod.DateTimes = arrayAtt[4].ToString();
+                _tempCommod.Name = arrayAtt[5].ToString();
+                //价格
+                long _price = 0;
+                if (arrayAtt.Length >= 7) {
+                    long.TryParse(arrayAtt[6], out _price);
+                    _tempCommod.Price = _price;
+                    //属性
+                    _tempCommod.ValueAdd = arrayAtt.Length >= 8 ? arrayAtt[7].ToString() : "";
+                }
+                
+                listCommod.Add(_tempCommod);
+
+            }
+            LowPrice(listCommod.ToArray());
+                        
             //禁用Socket 
             socket.Shutdown(SocketShutdown.Both);
             //关闭Socket 
@@ -95,6 +125,31 @@ namespace RxjhShopCollector
         }
 
 
-         
+        public List<DataAccesss.CommodConfig> MoinList() {
+
+            DataAccesss.CommodConfigServer config = new DataAccesss.CommodConfigServer();
+            return config.GetAll();                
+        }
+
+        public List<Commod> GetLowData() {
+            CommodServer server = new CommodServer();
+            return server.GetAll();
+        }
+
+        public void LowPrice(DataAccesss.Commod[] commods)
+        {
+            if (commods.Length == 0)
+                return;
+            DataAccesss.Commod low = commods.Where(t=>t.Price!=0).OrderBy(i => i.Price).First();
+
+            CommodServer commodserver = new CommodServer();
+            commodserver.Add(low);
+
+        }
+
+        public void AddCommodConfig(DataAccesss.CommodConfig config) {
+            CommodConfigServer server = new CommodConfigServer();
+            server.Add(config);
+        }
     }
 }

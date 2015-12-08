@@ -17,5 +17,6 @@ namespace DataAccesss
         public System.Guid ID { get; set; }
         public string Name { get; set; }
         public string Bytes { get; set; }
+        public string AddValue { get; set; }
     }
 }

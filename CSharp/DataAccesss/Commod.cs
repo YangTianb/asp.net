@@ -15,12 +15,12 @@ namespace DataAccesss
     public partial class Commod
     {
         public System.Guid ID { get; set; }
-        public string Name { get; set; }
-        public string ValueAdd { get; set; }
-        public int Line { get; set; }
-        public string Axes { get; set; }
-        public long Price { get; set; }
         public string MerName { get; set; }
+        public string Name { get; set; }
+        public string Line { get; set; }
+        public string Axes { get; set; }
+        public string ValueAdd { get; set; }
+        public long Price { get; set; }
         public string DateTimes { get; set; }
     }
 }

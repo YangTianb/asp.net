@@ -25,8 +25,8 @@ namespace DataAccesss
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Commod> Commod { get; set; }
-        public DbSet<CommodConfig> CommodConfig { get; set; }
         public DbSet<SystemConfig> SystemConfig { get; set; }
+        public DbSet<CommodConfig> CommodConfig { get; set; }
+        public DbSet<Commod> Commod { get; set; }
     }
 }

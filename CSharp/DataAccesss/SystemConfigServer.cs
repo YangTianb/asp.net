@@ -15,5 +15,7 @@ namespace DataAccesss
                 return en.SystemConfig.FirstOrDefault();
             }
         }
+
+        
     }
 }

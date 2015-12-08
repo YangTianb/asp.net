@@ -48,13 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Commod.cs">
       <DependentUpon>RxjhModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CommodConfig.cs">
       <DependentUpon>RxjhModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommodConfigServer.cs" />
+    <Compile Include="CommodServer.cs" />
+    <Compile Include="SystemConfigServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RxjhModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -82,7 +84,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <EmbeddedResource Include="App.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="RxjhModel.edmx.diagram">
       <DependentUpon>RxjhModel.edmx</DependentUpon>
