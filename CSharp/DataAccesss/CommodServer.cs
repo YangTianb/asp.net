@@ -38,7 +38,7 @@ namespace DataAccesss
 
         public List<Commod> GetAll() {
             using (RxjhEntities en = new RxjhEntities()) {
-                return en.Commod.ToList();
+                return en.Commod.OrderBy(i=>i.Price).ToList();
             }
         }
     }

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +13,9 @@ namespace BaseLibrary
     {
         static void Main(string[] args)
         {
-            //StringRand(6);
+           
 
 
-            HttpHelper h = new HttpHelper();
-            var s = h.HttpGet("http://192.168.0.113:18081/zhongduan/zyydqk", "");
-            Console.WriteLine(s);
-            Console.ReadLine();
         }
 
         private static string StringRand(int length)

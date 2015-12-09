@@ -16,8 +16,7 @@ namespace RxjhShopCollector
         public Form1()
         {
             InitializeComponent();
-            Start();
-            BindMoin();
+          
         }
 
         private void Start() {
@@ -28,7 +27,7 @@ namespace RxjhShopCollector
             {
                 coll.GetData(temp.Bytes);
             }
-
+            
             BindLowData();
         }
 
@@ -42,7 +41,7 @@ namespace RxjhShopCollector
 
         private void BindLowData() {
             Collecter coll = new Collecter();
-            dg_LowData.DataSource= coll.GetLowData().OrderBy(i=>i.Name).ToList<Commod>();
+            dg_LowData.DataSource= coll.GetLowData();
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -53,10 +52,11 @@ namespace RxjhShopCollector
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            ShowUpdateTime();
             timer1.Interval = 1 * 1000 * 60 * 3;
             Start();
             BindMoin();
-            ShowUpdateTime();
+           
         }
 
         private void ShowUpdateTime() {
