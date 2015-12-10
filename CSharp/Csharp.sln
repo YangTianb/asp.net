@@ -31,7 +31,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxjhShopCollector", "RxjhSh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "热血江湖", "热血江湖", "{58769BDA-BBA7-4741-A032-516F16FD2467}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccesss", "DataAccesss\DataAccesss.csproj", "{90452BB1-C502-4CBB-A234-577B192FD389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.Model", "DataAccesss\Rxjh.Model.csproj", "{90452BB1-C502-4CBB-A234-577B192FD389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.EntityFrameworkDao", "Rxjh.EntityFrameworkDao\Rxjh.EntityFrameworkDao.csproj", "{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.JsonDao", "Rxjh.JsonDao\Rxjh.JsonDao.csproj", "{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.IDao", "Rxjh.IDao\Rxjh.IDao.csproj", "{9B7FEBFD-F51C-4562-815D-D4FE39982CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.IBll", "Rxjh.IBll\Rxjh.IBll.csproj", "{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rxjh.Bll", "Rxjh.Bll\Rxjh.Bll.csproj", "{2F0BD68A-02E6-4189-95F9-67903C783C9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "测试", "测试", "{17D6D031-2F48-4E0A-9CD4-96F3032F58CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +87,26 @@ Global
 		{90452BB1-C502-4CBB-A234-577B192FD389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90452BB1-C502-4CBB-A234-577B192FD389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90452BB1-C502-4CBB-A234-577B192FD389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7FEBFD-F51C-4562-815D-D4FE39982CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7FEBFD-F51C-4562-815D-D4FE39982CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7FEBFD-F51C-4562-815D-D4FE39982CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7FEBFD-F51C-4562-815D-D4FE39982CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F0BD68A-02E6-4189-95F9-67903C783C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0BD68A-02E6-4189-95F9-67903C783C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0BD68A-02E6-4189-95F9-67903C783C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0BD68A-02E6-4189-95F9-67903C783C9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,9 +121,14 @@ Global
 		{183B5789-27A4-4CA5-BB0D-1F4FA8538014} = {2F21DA04-6056-411A-B670-2DCB38AA8830}
 		{106D485A-D9C3-400D-BD4E-5BE1C04FF764} = {58769BDA-BBA7-4741-A032-516F16FD2467}
 		{90452BB1-C502-4CBB-A234-577B192FD389} = {58769BDA-BBA7-4741-A032-516F16FD2467}
+		{E597E7C2-3A45-4B59-8FD3-14B7DC4F4AFA} = {58769BDA-BBA7-4741-A032-516F16FD2467}
+		{6F7BA335-6FB9-4951-B53A-BCADB3C8FBF7} = {58769BDA-BBA7-4741-A032-516F16FD2467}
+		{9B7FEBFD-F51C-4562-815D-D4FE39982CAB} = {58769BDA-BBA7-4741-A032-516F16FD2467}
+		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A} = {58769BDA-BBA7-4741-A032-516F16FD2467}
+		{2F0BD68A-02E6-4189-95F9-67903C783C9A} = {58769BDA-BBA7-4741-A032-516F16FD2467}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

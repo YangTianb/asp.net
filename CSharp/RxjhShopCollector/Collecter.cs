@@ -1,4 +1,5 @@
-﻿using DataAccesss;
+﻿using BaseLibrary;
+using DataAccesss;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
@@ -68,7 +69,10 @@ namespace RxjhShopCollector
 
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hexData"></param>
         public void GetData(string hexData)
         {
             //发送给远程主机的请求内容串 
@@ -263,12 +267,4 @@ namespace RxjhShopCollector
     }
 
 
-    static class StringEx{
-        public static List<T> JSONStringToList<T>(this string JsonStr)
-        {
-            JavaScriptSerializer Serializer = new JavaScriptSerializer();
-            List<T> objs = Serializer.Deserialize<List<T>>(JsonStr);
-            return objs;
-        }
-    }
 }

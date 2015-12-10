@@ -33,11 +33,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Spring.Aop, Version=1.3.0.20214, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.0.20214, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Spring.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -99,12 +120,39 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="config\Mapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="images\rj_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccesss\DataAccesss.csproj">
+    <ProjectReference Include="..\BaseLibrary\BaseLibrary.csproj">
+      <Project>{7b9bc973-4fec-4187-9138-f1e54491ac6d}</Project>
+      <Name>BaseLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccesss\Rxjh.Model.csproj">
       <Project>{90452bb1-c502-4cbb-a234-577b192fd389}</Project>
-      <Name>DataAccesss</Name>
+      <Name>Rxjh.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rxjh.Bll\Rxjh.Bll.csproj">
+      <Project>{2f0bd68a-02e6-4189-95f9-67903c783c9a}</Project>
+      <Name>Rxjh.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rxjh.EntityFrameworkDao\Rxjh.EntityFrameworkDao.csproj">
+      <Project>{e597e7c2-3a45-4b59-8fd3-14b7dc4f4afa}</Project>
+      <Name>Rxjh.EntityFrameworkDao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rxjh.IBll\Rxjh.IBll.csproj">
+      <Project>{a46a51c8-71c7-42e6-a150-4cf0aae4aa8a}</Project>
+      <Name>Rxjh.IBll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rxjh.IDao\Rxjh.IDao.csproj">
+      <Project>{9b7febfd-f51c-4562-815d-d4fe39982cab}</Project>
+      <Name>Rxjh.IDao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rxjh.JsonDao\Rxjh.JsonDao.csproj">
+      <Project>{6f7ba335-6fb9-4951-b53a-bcadb3c8fbf7}</Project>
+      <Name>Rxjh.JsonDao</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

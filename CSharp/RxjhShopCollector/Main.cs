@@ -1,4 +1,7 @@
 ﻿using DataAccesss;
+using Rxjh.IBll;
+using Spring.Context;
+using Spring.Context.Support;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +19,10 @@ namespace RxjhShopCollector
         public Form1()
         {
             InitializeComponent();
-          
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            var IBll = ctx.GetObject("SystemConfigBll") as ISystemConfigBll;
+            SystemConfig config = IBll.GetAll();
+            string ip = config.IP;
         }
 
         private void Start() {
@@ -52,11 +58,10 @@ namespace RxjhShopCollector
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ShowUpdateTime();
-            timer1.Interval = 1 * 1000 * 60 * 3;
-            Start();
-            BindMoin();
-           
+            //ShowUpdateTime();
+            //timer1.Interval = 1 * 1000 * 60 * 3;
+            //Start();
+            //BindMoin();           
         }
 
         private void ShowUpdateTime() {
