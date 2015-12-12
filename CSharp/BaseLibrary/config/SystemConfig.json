@@ -1,0 +1,20 @@
+﻿{
+  "SystemConfig": {
+    "IP": "218.30.83.84",
+    "Port": "2001"
+  },
+  "CommodConfig": [
+    {
+      "Name": "热血红颜",
+      "Bytes": "595f1000bfdbddba2cc7c7dea5b5e3deda2cb0da"
+    },
+    {
+      "Name": "幻彩流铃裙",
+      "Bytes": "595f1200bfdbddba2cb4ccbdc5cef8ceeac7b62cb0da"
+    },
+    {
+      "Name": "凝彩水月袍",
+      "Bytes": "595f12000bfdbddba2ccbf2bdc5c4a1dbcdcad42cb0da"
+    }
+  ]
+}
