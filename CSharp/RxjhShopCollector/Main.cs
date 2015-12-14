@@ -18,11 +18,7 @@ namespace RxjhShopCollector
     {
         public Form1()
         {
-            InitializeComponent();
-            IApplicationContext ctx = ContextRegistry.GetContext();
-            var IBll = ctx.GetObject("SystemConfigBll") as ISystemConfigBll;
-            SystemConfig config = IBll.GetAll();
-            string ip = config.IP;
+            InitializeComponent();          
         }
 
         private void Start() {
@@ -32,8 +28,7 @@ namespace RxjhShopCollector
             foreach (var temp in list)
             {
                 coll.GetData(temp.Bytes);
-            }
-            
+            }            
             BindLowData();
         }
 
@@ -47,7 +42,7 @@ namespace RxjhShopCollector
 
         private void BindLowData() {
             Collecter coll = new Collecter();
-            dg_LowData.DataSource= coll.GetLowData();
+            dg_LowData.DataSource= coll.GetLowData().OrderBy(i=>i.Price).ToList();
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -58,10 +53,10 @@ namespace RxjhShopCollector
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //ShowUpdateTime();
-            //timer1.Interval = 1 * 1000 * 60 * 3;
-            //Start();
-            //BindMoin();           
+            ShowUpdateTime();
+            timer1.Interval = 1 * 1000 * 60 * 3;
+            Start();
+            BindMoin();           
         }
 
         private void ShowUpdateTime() {
@@ -83,9 +78,9 @@ namespace RxjhShopCollector
 
             Collecter coll = new Collecter();
             coll.AddCommodConfig(config);
-            Start();
+            
             BindMoin();
-            ShowUpdateTime();
+           
         }
     }
 }

@@ -5,9 +5,18 @@
                         http://www.springframework.net/xsd/spring-objects.xsd">
 
   <object id="SystemConfigDao" type="Rxjh.JsonDao.SystemConfigDaoJson, Rxjh.JsonDao"></object>
-
+  <object id ="CommodConfigDao" type="Rxjh.JsonDao.CommodConfigDaoJson, Rxjh.JsonDao"></object>
+  <object id="CommodDao" type="Rxjh.EntityFrameworkDao.CommodCache,Rxjh.EntityFrameworkDao"></object>
+  
   <object id="SystemConfigBll" type="Rxjh.Bll.SystemConfigBll, Rxjh.Bll">
     <property name="SystemConfigDao" ref="SystemConfigDao"></property>
   </object>
   
+  <object id="CommodConfigBll" type="Rxjh.Bll.CommodConfigBll,Rxjh.Bll">
+    <property name="CommodConfigDao" ref="CommodConfigDao"></property>
+  </object>
+  <object id="CommodBll" type="Rxjh.Bll.CommodBll">
+    <property name="CommodDao" ref="CommodDao"></property>
+  </object>
+
 </objects>

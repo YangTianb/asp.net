@@ -11,15 +11,29 @@ namespace Rxjh.Bll
 {
     public class CommodBll : ICommodBll
     {
-        private ICommodDao 
+        private ICommodDao commodDao;
+
+        public ICommodDao CommodDao
+        {
+            get
+            {
+                return commodDao;
+            }
+
+            set
+            {
+                commodDao = value;
+            }
+        }
+
         public void Add(Commod commod)
         {
-            throw new NotImplementedException();
+            CommodDao.Add(commod);
         }
 
         public List<Commod> GetAll()
         {
-            throw new NotImplementedException();
+            return CommodDao.GetAll();
         }
     }
 }

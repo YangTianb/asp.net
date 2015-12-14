@@ -2,6 +2,9 @@
 using DataAccesss;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Rxjh.IBll;
+using Spring.Context;
+using Spring.Context.Support;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +21,7 @@ namespace RxjhShopCollector
     {
 
         private Socket commodSocket = null;
-
-
+        
         //应用程序路劲
         private string applicationPath =@""+ Environment.CurrentDirectory;
         private string SystemConfigPath {
@@ -62,12 +64,9 @@ namespace RxjhShopCollector
                     {
                         Console.WriteLine("连接错误");
                     }
-                }
-               
+                }               
                return commodSocket;
-            }
-
-            
+            }            
         }
         /// <summary>
         /// 
@@ -179,8 +178,10 @@ namespace RxjhShopCollector
 
         public List<Commod> GetLowData()
         {
-            CommodServer server = new CommodServer();
-            return server.GetAll();
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            var IBll = ctx.GetObject("CommodBll") as ICommodBll;
+         
+            return IBll.GetAll();
         }
 
         public void LowPrice(DataAccesss.Commod[] commods)
@@ -188,9 +189,9 @@ namespace RxjhShopCollector
             if (commods.Length == 0)
                 return;
             DataAccesss.Commod low = commods.Where(t => t.Price != 0).OrderBy(i => i.Price).First();
-
-            CommodServer commodserver = new CommodServer();
-            commodserver.Add(low);
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            var IBll = ctx.GetObject("CommodBll") as ICommodBll;
+            IBll.Add(low);
 
         }
 
@@ -202,39 +203,15 @@ namespace RxjhShopCollector
 
         public SystemConfig ReadSystemConfig()
         {
-            SystemConfig cfm = new SystemConfig();
-            //读取json文件  
-            using (StreamReader sr = new StreamReader(SystemConfigPath))
-            {
-                try
-                {                   
-                    string retString = sr.ReadToEnd();
-                    cfm = Deserialize<SystemConfig>(retString);
-
-                }
-                catch (Exception ex)
-                {
-                    ex.Message.ToString();
-                }
-                sr.Close();
-                sr.Dispose();
-            }
-            return cfm;
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            var IBll = ctx.GetObject("SystemConfigBll") as ISystemConfigBll;
+            return IBll.GetAll();
         }
 
         public List<CommodConfig> ReadCommodConfig() {
-            List<CommodConfig> listcfm = new List<DataAccesss.CommodConfig>();
-            using (StreamReader sr = new StreamReader(CommodConfigPath)) {
-                try {
-                    string retString = sr.ReadToEnd();
-                    listcfm= retString.JSONStringToList<CommodConfig>();
-                } catch
-                    (Exception ex){
-                }
-                sr.Close();
-                sr.Dispose();
-            }
-            return listcfm;
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            var IBll = ctx.GetObject("CommodConfigBll") as ICommodConfigBll;            
+            return IBll.GetAll();
         }
 
         public List<Commod> LoadLowData() {
@@ -254,15 +231,7 @@ namespace RxjhShopCollector
             return list;
         }
         
-        public static T Deserialize<T>(string json)
-        {
-            T obj = Activator.CreateInstance<T>();
-            using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
-            {
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
-                return (T)serializer.ReadObject(ms);
-            }
-        }
+
 
     }
 

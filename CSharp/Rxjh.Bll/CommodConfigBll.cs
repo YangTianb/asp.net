@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccesss;
+using Rxjh.IBll;
 
 namespace Rxjh.Bll
 {
-    public class CommodConfigBll : ICommodConfigDao
+    public class CommodConfigBll : ICommodConfigBll
     {
         private ICommodConfigDao commodConfigDao;
 

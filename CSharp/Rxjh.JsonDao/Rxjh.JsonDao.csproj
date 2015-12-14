@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommodConfigDaoJson.cs" />
     <Compile Include="SystemConfigDaoJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseLibrary\BaseLibrary.csproj">
+      <Project>{7b9bc973-4fec-4187-9138-f1e54491ac6d}</Project>
+      <Name>BaseLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccesss\Rxjh.Model.csproj">
       <Project>{90452bb1-c502-4cbb-a234-577b192fd389}</Project>
       <Name>Rxjh.Model</Name>
