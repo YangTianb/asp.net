@@ -13,13 +13,31 @@ namespace Rxjh
     {
         static void Main(string[] args)
         {
-            string s = StringHex.ToHex("玄武战衣","gb2312",false);
 
 
-            Console.WriteLine("玄武战衣="+s);
-            Console.WriteLine(s + "=" + StringHex.UnHex(s, "gb2312"));
+            string areaid = "510000";
+
+            if (!string.IsNullOrEmpty(areaid))
+            {
+                string areaT = areaid.Substring(0, 3);
+
+                string areaE = areaid.Substring(3);
+
+
+                Console.WriteLine(areaT + areaE.Trim('0'));
+                Console.ReadLine();
+            }
 
             Console.ReadLine();
+            //string s = StringHex.ToHex("玄武战衣","gb2312",false);
+
+
+            //Console.WriteLine("玄武战衣="+s);
+
+
+            //Console.WriteLine("=" + StringHex.UnHex("aa557b0001c19596d90e85d4bd50af719207d90c5d1d2225f91e7f14d18cbd1283ae9f0c7376d5b9d9a785d3b6bbaf1799e5d90c5d1d2225f91e7f57d18cbdfbc8b9f10c7376d5b9d9a785f0bd3baf719207d90c5d1d2225f91e7f57d18cbda438b9f10c7376d5b9d9a785f0bd3baf719207d90c5d1d2225f91e7f57d1c51c55aa", "gb2312"));
+
+            //Console.ReadLine();
         }
         private static string hexstr2str(string hexstring) {
             System.Text.Encoding encode = System.Text.Encoding.GetEncoding("GB2312");

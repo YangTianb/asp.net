@@ -49,6 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenIDorOAuth", "OpenIDorOA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenID", "OpenID\OpenID.csproj", "{7BB551DD-4CD7-448A-AFBD-3F7062A1D1CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "即时通讯", "即时通讯", "{269CC420-56D8-4C92-9E1D-56CD1B0F73B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{712529C8-B551-47D9-AEDA-37C91D28093A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,10 @@ Global
 		{7BB551DD-4CD7-448A-AFBD-3F7062A1D1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB551DD-4CD7-448A-AFBD-3F7062A1D1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB551DD-4CD7-448A-AFBD-3F7062A1D1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712529C8-B551-47D9-AEDA-37C91D28093A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712529C8-B551-47D9-AEDA-37C91D28093A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712529C8-B551-47D9-AEDA-37C91D28093A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712529C8-B551-47D9-AEDA-37C91D28093A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,6 +143,7 @@ Global
 		{A46A51C8-71C7-42E6-A150-4CF0AAE4AA8A} = {58769BDA-BBA7-4741-A032-516F16FD2467}
 		{2F0BD68A-02E6-4189-95F9-67903C783C9A} = {58769BDA-BBA7-4741-A032-516F16FD2467}
 		{7BB551DD-4CD7-448A-AFBD-3F7062A1D1CE} = {EA384EED-602C-4925-BA21-70B130874554}
+		{712529C8-B551-47D9-AEDA-37C91D28093A} = {269CC420-56D8-4C92-9E1D-56CD1B0F73B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
