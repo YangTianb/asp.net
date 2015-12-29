@@ -65,21 +65,21 @@ namespace RxjhShopCollector
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var _name = txtName.Text.Trim();
-            var _addValue = txtAddValue.Text.Trim();
-            var _price = txtPrice.Text.Trim();
-            var _bytes = txtBytes.Text.Trim();
-            CommodConfig config = new CommodConfig()
-            {
-                AddValue =_addValue,
-                Bytes = _bytes,
-                 Name= _name
-            };
+            //var _name = txtName.Text.Trim();
+            //var _addValue = txtAddValue.Text.Trim();
+            //var _price = txtPrice.Text.Trim();
+            //var _bytes = txtBytes.Text.Trim();
+            //CommodConfig config = new CommodConfig()
+            //{
+            //    AddValue =_addValue,
+            //    Bytes = _bytes,
+            //     Name= _name
+            //};
 
-            Collecter coll = new Collecter();
-            coll.AddCommodConfig(config);
+            //Collecter coll = new Collecter();
+            //coll.AddCommodConfig(config);
             
-            BindMoin();
+            //BindMoin();
            
         }
     }
