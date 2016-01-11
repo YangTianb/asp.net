@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "WebApplication1"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-WebApplication1-57a31a7d-1361-4e72-ab41-af452159fe22;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

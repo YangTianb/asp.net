@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "OpenID"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-OpenID-b0683dd5-e251-47e6-90c5-b0ffe4256eda;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}

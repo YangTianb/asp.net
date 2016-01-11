@@ -135,16 +135,33 @@ namespace Common.Mail
         {
             get
             {
-                XmlDocument doc = new XmlDocument();
+                var doc = new XmlDocument();
                 doc.Load(Environment.CurrentDirectory+@"\Config\Mail.config");
-                MailSetting smtpSetting = new MailSetting();
-                smtpSetting.Server = doc.DocumentElement.SelectSingleNode("SmtpServer").InnerText;
-                smtpSetting.Authentication = Convert.ToBoolean(doc.DocumentElement.SelectSingleNode("Authentication").InnerText);
-                smtpSetting.From = doc.DocumentElement.SelectSingleNode("From").InnerText;
-                smtpSetting.Password = doc.DocumentElement.SelectSingleNode("Pwd").InnerText;
-                smtpSetting.ShowName = doc.DocumentElement.SelectSingleNode("ShowName").InnerText;
-                smtpSetting.SmtpPort =Convert.ToInt32(doc.DocumentElement.SelectSingleNode("SmtpPort").InnerText);
-                smtpSetting.IsEnable = Convert.ToBoolean(doc.DocumentElement.SelectSingleNode("Enable").InnerText);
+                var smtpSetting = new MailSetting();
+                if (doc.DocumentElement != null)
+                {
+                    var selectSingleNode = doc.DocumentElement.SelectSingleNode("SmtpServer");
+                    if (selectSingleNode != null)
+                        smtpSetting.Server = selectSingleNode.InnerText;
+                    var singleNode = doc.DocumentElement.SelectSingleNode("Authentication");
+                    if (singleNode != null)
+                        smtpSetting.Authentication = Convert.ToBoolean(singleNode.InnerText);
+                    var singleNode1 = doc.DocumentElement.SelectSingleNode("From");
+                    if (singleNode1 != null)
+                        smtpSetting.From = singleNode1.InnerText;
+                    var xmlNode = doc.DocumentElement.SelectSingleNode("Pwd");
+                    if (xmlNode != null)
+                        smtpSetting.Password = xmlNode.InnerText;
+                    var node = doc.DocumentElement.SelectSingleNode("ShowName");
+                    if (node != null)
+                        smtpSetting.ShowName = node.InnerText;
+                    var o = doc.DocumentElement.SelectSingleNode("SmtpPort");
+                    if (o != null)
+                        smtpSetting.SmtpPort =Convert.ToInt32(o.InnerText);
+                    var selectSingleNode1 = doc.DocumentElement.SelectSingleNode("Enable");
+                    if (selectSingleNode1 != null)
+                        smtpSetting.IsEnable = Convert.ToBoolean(selectSingleNode1.InnerText);
+                }
                 return smtpSetting;
             }
         }
