@@ -17,6 +17,7 @@ namespace Scpo.Components.Business
             return configSendGridasync(message);
         }
 
+
         private Task configSendGridasync(IdentityMessage message)
         {
             var myMessage = new SendGridMessage();
