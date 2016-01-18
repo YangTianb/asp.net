@@ -17,6 +17,13 @@ namespace IdentitySample.Controllers
         {
             ViewBag.Message = "Your application description page.";
 
+
+            var claims = HttpContext.GetOwinContext().Authentication.User.Claims;
+            var firstOrDefault = claims.FirstOrDefault(item => item.Type.Equals("Id"));
+            if (firstOrDefault != null)
+            {
+                var id = firstOrDefault.Value;
+            }
             return View();
         }
 

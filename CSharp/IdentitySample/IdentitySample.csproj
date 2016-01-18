@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,6 +200,23 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\webuploader\Uploader.swf" />
+    <Content Include="Scripts\webuploader\webuploader.css" />
+    <Content Include="Scripts\webuploader\webuploader.custom.js" />
+    <Content Include="Scripts\webuploader\webuploader.custom.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.fis.js" />
+    <Content Include="Scripts\webuploader\webuploader.flashonly.js" />
+    <Content Include="Scripts\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.html5only.js" />
+    <Content Include="Scripts\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.js" />
+    <Content Include="Scripts\webuploader\webuploader.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.noimage.js" />
+    <Content Include="Scripts\webuploader\webuploader.noimage.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.nolog.js" />
+    <Content Include="Scripts\webuploader\webuploader.nolog.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Scripts\webuploader\webuploader.withoutimage.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -234,6 +252,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\webuploader\README.md" />
+    <Content Include="Views\File\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
