@@ -15,8 +15,10 @@ namespace IdentitySample.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upload(string id, string name, string type, string lastModifiedDate, int size, HttpPostedFileBase file)
+        public ActionResult UploadPost()
         {
+            var file = Request.Files[0];
+
             return this.Content("");
         }
 

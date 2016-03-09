@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,5 +52,14 @@ namespace BaseLibrary
 
             return retString;
         }
+
+        public string ReadImage(string url)
+        {
+            HttpClient client = new HttpClient();
+            var result = client.GetAsync(url).Result;
+            
+            return "";
+        }
+
     }
 }

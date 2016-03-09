@@ -35,10 +35,11 @@
         
         // 选完文件后，是否自动上传。
         auto: true,
+        method:'POST',
         // swf文件路径
         swf: applicationPath + '/Scripts/Uploader.swf',
         // 文件接收服务端。
-        server: applicationPath+'/File/Upload',
+        server: applicationPath + '/File/UploadPost',
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
         pick: '#filePicker',
