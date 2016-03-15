@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace OpenExpert.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         // GET: Admin

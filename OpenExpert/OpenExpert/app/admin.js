@@ -24,7 +24,7 @@ define(['durandal/system', 'durandal/app'], function (system, app) {
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = '后台管理';
 
     app.configurePlugins({
         router: true,
@@ -33,6 +33,6 @@ define(['durandal/system', 'durandal/app'], function (system, app) {
 
     app.start().then(function () {
 
-        app.setRoot('admin/shell', 'entrance');
+        app.setRoot('admin/shell');
     });
 });

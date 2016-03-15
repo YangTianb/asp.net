@@ -198,6 +198,14 @@
     <Content Include="app\account\regist.html" />
     <Content Include="app\account\regist.js" />
     <Content Include="app\admin.js" />
+    <Content Include="app\admin\auditor.html" />
+    <Content Include="app\admin\auditor.js" />
+    <Content Include="app\admin\data.html" />
+    <Content Include="app\admin\data.js" />
+    <Content Include="app\admin\index.html" />
+    <Content Include="app\admin\index.js" />
+    <Content Include="app\admin\project.html" />
+    <Content Include="app\admin\project.js" />
     <Content Include="app\admin\shell.html" />
     <Content Include="app\admin\shell.js" />
     <Content Include="app\album.js" />

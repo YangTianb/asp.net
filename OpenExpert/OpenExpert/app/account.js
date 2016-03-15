@@ -24,7 +24,7 @@ define(['durandal/system', 'durandal/app'], function (system, app) {
     system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = '外联管理';
 
     app.configurePlugins({
         router: true,
