@@ -178,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -190,6 +191,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\account\data.html" />
+    <Content Include="app\account\data.js" />
+    <Content Include="app\account\document.html" />
+    <Content Include="app\account\document.js" />
+    <Content Include="app\account\regist.html" />
+    <Content Include="app\account\regist.js" />
+    <Content Include="app\admin.js" />
+    <Content Include="app\admin\shell.html" />
+    <Content Include="app\admin\shell.js" />
     <Content Include="app\album.js" />
     <Content Include="app\album\detail.html" />
     <Content Include="app\album\flickr.html" />
@@ -204,22 +214,24 @@
     <Content Include="app\album\welcome.js" />
     <Content Include="app\service\album.js" />
     <Content Include="app\service\user.js" />
-    <Content Include="app\summary.js" />
-    <Content Include="app\summary\index.html" />
-    <Content Include="app\summary\index.js" />
-    <Content Include="app\summary\shell.html" />
-    <Content Include="app\summary\shell.js" />
+    <Content Include="app\account.js" />
+    <Content Include="app\account\index.html" />
+    <Content Include="app\account\index.js" />
+    <Content Include="app\account\shell.html" />
+    <Content Include="app\account\shell.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-datetimepicker.css" />
     <Content Include="lib\bootstrap\css\bootstrap-theme.css" />
     <Content Include="lib\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="lib\bootstrap\css\bootstrap.css" />
     <Content Include="lib\bootstrap\css\bootstrap.min.css" />
     <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\js\bootstrap-datetimepicker.js" />
     <Content Include="lib\bootstrap\js\bootstrap.js" />
     <Content Include="lib\bootstrap\js\bootstrap.min.js" />
     <Content Include="lib\durandal\css\durandal.css" />
@@ -254,6 +266,15 @@
     <Content Include="lib\knockout\knockout.mapping-latest.js" />
     <Content Include="lib\knockout\knockout.validation.js" />
     <Content Include="lib\knockout\knockout.validation.min.js" />
+    <Content Include="lib\layer\extend\layer.ext.js" />
+    <Content Include="lib\layer\layer.js" />
+    <Content Include="lib\layer\skin\default\icon-ext.png" />
+    <Content Include="lib\layer\skin\default\icon.png" />
+    <Content Include="lib\layer\skin\default\loading-0.gif" />
+    <Content Include="lib\layer\skin\default\loading-1.gif" />
+    <Content Include="lib\layer\skin\default\loading-2.gif" />
+    <Content Include="lib\layer\skin\layer.css" />
+    <Content Include="lib\layer\skin\layer.ext.css" />
     <Content Include="lib\require\almond-custom.js" />
     <Content Include="lib\require\r.js" />
     <Content Include="lib\require\require.js" />
@@ -316,7 +337,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Account\Summary.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Shared\_PayTime.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -488,7 +488,7 @@ namespace OpenExpert.Controllers
 
         #region 账户概要
 
-        public ActionResult Summary()
+        public ActionResult Index()
         {
             return View();
         }

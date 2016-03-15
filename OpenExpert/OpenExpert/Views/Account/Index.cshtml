@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "账户概要";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="applicationHost">
+</div>
+
+@Html.Partial("_PayTime")
+
+@Html.Partial("_LoginPartial")
+<script src="/lib/require/require.js" data-main="/app/account"></script>
