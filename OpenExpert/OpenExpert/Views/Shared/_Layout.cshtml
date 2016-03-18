@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
-<html>
+
+<html xmlns:wb="http://open.weibo.com/wb">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
@@ -9,9 +10,31 @@
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/lib/bootstrap/css/bootstrap-datetimepicker.css")
     @Styles.Render("~/lib/layer/skin/layer.css")
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=YOUR APPKEY" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        
+        WB2.anyWhere(function(W){
+
+            W.parseCMD("/users/show.json", function(sResult, bStatus){
+                try{
+                    //to do something...
+
+                }catch(e){}
+
+            },{
+                uid: '123456789'
+            },{
+
+            method: 'get'
+
+        });
+
+        });
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default  navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

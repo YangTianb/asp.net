@@ -9,7 +9,8 @@
         'bootstrap': '/lib/bootstrap/js/bootstrap',
         'jquery': '/lib/jquery/jquery-1.9.1',
         'layer': '/lib/layer/layer',
-        'datatimepicker': '/lib/bootstrap/js/bootstrap-datetimepicker'
+        'datatimepicker': '/lib/bootstrap/js/bootstrap-datetimepicker',
+        'validation': '/lib/knockout/knockout.validation'
     },
     shim: {
         'bootstrap': {
@@ -19,7 +20,8 @@
     }
 });
 
-define(['durandal/system', 'durandal/app'], function (system, app) {
+define(['durandal/system', 'durandal/app', 'plugins/dialog', 'shared/dialogContext', 'datatimepicker', 'layer'],
+    function (system, app, dialog, dialogContext, datatimepicker, layer) {
     //>>excludeStart("build", true);
     system.debug(true);
     //>>excludeEnd("build");
@@ -32,7 +34,7 @@ define(['durandal/system', 'durandal/app'], function (system, app) {
     });
 
     app.start().then(function () {
-
+        dialog.addContext("MyDialog", dialogContext);
         app.setRoot('account/shell', 'entrance');
     });
 });

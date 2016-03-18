@@ -1,0 +1,31 @@
+﻿<!--续费抽取时长-->
+<div id="payTime" style="width: 500px;">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    你当前抽取到期时间：<span data-bind="text:oldendtime"> </span>
+                </div>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">续费到：</label>
+                        <div class="col-sm-8">
+                            <input size="16" type="text" data-bind="value:endtime" readonly class="form_datetime form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">支付方式：</label>
+                        <div class="col-sm-8">
+                            <div class="col-sm-3">
+                                <button class="btn btn-default">支付宝</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button class="btn btn-default" data-bind="click:function(){submit();}">微信</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

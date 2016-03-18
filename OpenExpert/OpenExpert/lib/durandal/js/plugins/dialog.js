@@ -307,8 +307,7 @@ define(['durandal/system', 'durandal/app', 'durandal/composition', 'durandal/act
         show: function (obj, activationData, context) {
             var that = this;
             var dialogContext = contexts[context || 'default'];
-
-            return system.defer(function (dfd) {
+          return system.defer(function (dfd) {
                 ensureDialogInstance(obj).then(function (instance) {
                     var dialogActivator = activator.create();
 

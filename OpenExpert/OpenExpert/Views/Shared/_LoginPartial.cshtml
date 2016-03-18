@@ -5,12 +5,25 @@
     {
     @Html.AntiForgeryToken()
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="/Account/Index">你好，@User.Identity.GetUserName() !</a>
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
-        </ul>
+        if (User.IsInRole("系统管理员"))
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/Admin/Index">你好，@User.Identity.GetUserName() !</a>
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+            </ul>
+        }
+        else
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/Account/Index">你好，@User.Identity.GetUserName() !</a>
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+            </ul>
+        }
+
     }
 }
 else

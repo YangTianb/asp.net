@@ -1,8 +1,11 @@
 ﻿<section class="panel panel-default">
     <div class="page-header">
         <h2>
-           接口调用文档
+            接口调用文档   &nbsp;<button class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-download"></span>下载
+            </button>
         </h2>
+
     </div>
     <div class="panel-body">
         <div class="row">
@@ -24,9 +27,13 @@
             </div>
             <div class="col-xs-6 col-md-9">
                 <div data-spy="scroll" data-target="#navbar-example" data-offset="0"
-                     style="height: 600px; overflow: auto; position: relative;">
+                     style="height: 500px; overflow: auto; position: relative;">
                     <div class="media-body">
                         <div id="home">
+                            <div class="page-header">
+                                <h2>接入凭证：</h2>
+                            </div>
+
                             <h4 class="media-heading">
                                 <span> 你的账户：324234324</span>
                                 <span> 令牌：454fewew#312321</span>
@@ -34,96 +41,166 @@
                             <span>请妥善保管你的接口调用账户信息！</span>
                         </div>
                         <div id="drawregister">
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>抽取申请<br/>抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>抽取申请<br/>
+                            <div class="page-header">
+                                <h2>抽取申请接口调用示例：</h2>
 
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>抽取申请<br/>抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>
-                            抽取申请<br/>抽取申请<br/>
+                            </div>
+                            <div class="highlight">
 
-                            抽取申请<br/>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">业主名称</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" size="16"/>
+                                        </div>
+                                        <label class="col-sm-2 control-label">项目名称</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" size="16"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">项目金额</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">$</span>
+                                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <span class="input-group-addon">万元</span>
+                                            </div>
+                                        </div>
+                                        <label class="col-sm-2 control-label">招标方式</label>
+                                        <div class="col-sm-4">
+                                                <select class="form-control">
+                                                    <option>公开招标</option>
+                                                    <option>单一来源</option>
+                                                </select>
+                                                
+                                            </div>
+                                    </div>
 
+
+
+                                </div>
+                                <pre>
+                                <code class="language-html" data-lang="html">
+                                    requirejs.config({
+    paths: {
+        'text': '/lib/require/text',
+        'durandal': '/lib/durandal/js',
+        'plugins': '/lib/durandal/js/plugins',
+        'transitions': '/lib/durandal/js/transitions',
+        'knockout': '/lib/knockout/knockout-3.1.0',
+        'mapping': '/lib/knockout/knockout.mapping-latest',
+        'bootstrap': '/lib/bootstrap/js/bootstrap',
+        'jquery': '/lib/jquery/jquery-1.9.1',
+        'layer': '/lib/layer/layer',
+        'datatimepicker': '/lib/bootstrap/js/bootstrap-datetimepicker'
+    },
+    shim: {
+        'bootstrap': {
+            deps: ['jquery'],
+            exports: 'jQuery'
+        }
+    }
+});
+define(['durandal/system', 'durandal/app'], function (system, app) {
+    //>>excludeStart("build", true);
+    system.debug(true);
+    //>>excludeEnd("build");
+    app.title = '外联管理';
+    app.configurePlugins({
+        router: true,
+        dialog: true
+    });
+    app.start().then(function () {
+        app.setRoot('account/shell', 'entrance');
+    });
+});
+                                    </code>
+                                    </pre>
+                            </div>
                         </div>
                         <div id="drawresult">
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>获取抽取结果<br/>
 
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>获取抽取结果<br/>
 
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>
-                            获取抽取结果<br/>获取抽取结果<br/>
+                            <div class="page-header">
+                                <h2>获取抽取结果调用示例：</h2>
+                            </div>
+                            <div class="highlight">
+                                <pre>
+                                <code class="language-html" data-lang="html">
+                                                                    define(['plugins/http', 'durandal/app', '../../lib/knockout/knockout-3.1.0'], function (http, app, ko) {
+    //Note: This module exports an object.
+    //That means that every module that "requires" it will get the same object instance.
+    //If you wish to be able to create multiple instances, instead export a function.
+    //See the "welcome" module for an example of function export.
+    return {
+        displayName: 'Flickr',
+        images: ko.observableArray([]),
+        activate: function () {
+            //the router's activator calls this function and waits for it to complete before proceeding
+            if (this.images().length > 0) {
+                return;
+            }
+            var that = this;
+            return http.jsonp('http://api.flickr.com/services/feeds/photos_public.gne', { tags: 'mount ranier', tagmode: 'any', format: 'json' }, 'jsoncallback').then(function(response) {
+                that.images(response.items);
+            });
+        },
+        select: function(item) {
+            //the app model allows easy display of modal dialogs by passing a view model
+            //views are usually located by convention, but you an specify it as well with viewUrl
+            item.viewUrl = 'views/detail';
+            app.showDialog(item);
+        },
+        canDeactivate: function () {
+            //the router's activator calls this function to see if it can leave the screen
+            return app.showMessage('Are you sure you want to leave this page?', 'Navigate', ['Yes', 'No']);
+        }
+    };
+});
+                                
+                                </code>
+                                </pre>
 
-                            获取抽取结果<br/>
+                            </div>
+                            <div id="pingjia">
+                                <div class="page-header">
+                                    <h2>推送评委评价接口调用示例：</h2>
+                                </div>
+                                <div class="highlight">
+                                    <pre>
+                                    <code class="language-html" data-lang="html">
+                                            /**
+                                             * Created by pc-hp on 2016/3/7.
+                                             */
+                                            define(['plugins/http', 'durandal/app', 'knockout','mapping'], function (http, app, ko,mapping) {
+                                                return function(app){
+                                                    var self = this;
+                                                    ko.mapping = mapping;
+                                                    self.title="选择上传类型";
+                                                    self.albumInfo = ko.mapping.fromJS({
+                                                        "albumId" :null,
+                                                        "name" : null,
+                                                        "desc" :null,
+                                                        "createDate": "0001-01-01T00:00:00+00:00",
+                                                        "privacyLevel": null,
+                                                        "visitPassword": null,
+                                                        "coverFileId": null,
+                                                        "categoryCode": null,
+                                                        "lastUploadDate": "0001-01-01T00:00:00+00:00"
+                                                    });
+                                                };
+                                            });
+                                    </code>
+                                    </pre>
 
-                        </div>
-                        <div id="pingjia">
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
-                            推送评委评价<br/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -3,6 +3,49 @@
         <h2>数据报表</h2>
     </div>
     <div class="panel-body">
-        内容
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <div class="list-group  bs-js-navbar-scrollspy">
+                    <a href="#xitongjiaofei" class="list-group-item active">
+                        系统缴费统计
+                    </a>
+                    <a href="#xitongchouqu" class="list-group-item ">
+                        系统抽取统计
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-9">
+                <div data-spy="scroll" data-target="#navbar-example" data-offset="0"
+                     style="height: 600px; overflow: auto; position: relative;">
+                    <div class="media-body">
+                        <div id="xitongjiaofei">
+                            <div class="page-header">
+                                <h2>
+                                    系统缴费统计：
+                                    <button class="btn btn-default">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                        导出
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        </div>
+                        <div id="xitongchouqu">
+                            <div class="page-header">
+                                <h2>
+                                    系统抽取统计：<button class="btn btn-default">
+                                        <span class="glyphicon glyphicon-arrow-up"></span>
+                                        导出
+                                    </button>
+                                </h2>
+                            </div>
+                        </div>
+                        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

@@ -9,6 +9,7 @@ namespace OpenExpert.Controllers
     [Authorize]
     public class AdminController : Controller
     {
+        [Authorize(Roles = "系统管理员")]
         // GET: Admin
         public ActionResult Index()
         {
